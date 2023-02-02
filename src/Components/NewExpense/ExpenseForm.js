@@ -1,13 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ExpenseForm.css'
 
 const ExpenseForm = () => {
+    const [Input , setInput] = useState();
+    const [Amount, setAmount] = useState();
+    const [Date, SetDate] = useState();
+
     const InputFiledHandler = (event) =>{
-        console.log(event.target.value);
+        setInput(event.target.value);
     }
+    const AmountFileHandler= (event) =>{
+        setAmount(event.target.value);
+    }
+    const DateFileHandler= (event) =>{
+        SetDate(event.target.value);
+        
+    }
+    const SubmitFormHandler = (event) =>{
+        event.preventDefault();
+
+        const Datas ={
+              text : Input , 
+              number : Amount,
+              date : Date
+        };
+        console.log(Datas);
+    }
+
   return (
     <div>
-        <form className='ExpenseForm'>
+        <form className='ExpenseForm' onSubmit={SubmitFormHandler}>
            <div className='new-expense__controls'>
             <div className='new-expense__control'>
                 <label>Title</label>
@@ -16,12 +38,12 @@ const ExpenseForm = () => {
 
             <div className='new-expense__control'>
                 <label>Amount</label>
-                <input type="number" className='Input'/>
+                <input type="number" className='Input' onChange={AmountFileHandler}/>
             </div>
 
             <div className='new-expense__control'>
                 <label>Date</label>
-                <input type="date" className='Input' min='01-10-2019' max='01-10-2022' />
+                <input type="date" className='Input' min='01-10-2019' max='01-02-2023' onChange={DateFileHandler} />
             </div>
             </div> 
             <div className='Form-submit__button'>
