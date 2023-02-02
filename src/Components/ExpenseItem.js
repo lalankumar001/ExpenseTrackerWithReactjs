@@ -6,6 +6,7 @@ const ExpenseItem = (props) => {
   const [title , setTitle] = useState(props.title);
   const [amount , setAmount] = useState(props.amount);
   
+  
   const onClickHandelar = () => {
       setTitle('updated');
         

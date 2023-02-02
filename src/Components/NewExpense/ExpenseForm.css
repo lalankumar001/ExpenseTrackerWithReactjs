@@ -1,0 +1,32 @@
+.ExpenseForm {
+    padding: 1rem;
+    background-color: rgb(31, 31, 31);
+    margin: 2rem auto;
+    width: 80rem;
+    max-width: 95%;
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  }
+  .ExpenseForm {
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #40005d;
+    border: 1px solid white;
+    padding: 0.5rem;
+    border-radius: 12px;
+  }
+  .Form-submit__button {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1%;
+    margin-left: 60%;
+  }
+  .new-expense__control{
+    font-size: 2rem;
+  }
+  .Input{
+    font-size: 1.5rem;
+    border: 1px solid black;
+    border-radius: 30px; 
+}
