@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './ExpenseForm.css'
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
     const [Input , setInput] = useState();
     const [Amount, setAmount] = useState();
     const [Date, SetDate] = useState();
@@ -24,7 +24,10 @@ const ExpenseForm = () => {
               number : Amount,
               date : Date
         };
-        console.log(Datas);
+        props.onSaveExpenseFormData(Datas);
+        setInput('');
+        setAmount('');
+        SetDate('');
     }
 
   return (
@@ -33,23 +36,25 @@ const ExpenseForm = () => {
            <div className='new-expense__controls'>
             <div className='new-expense__control'>
                 <label>Title</label>
-                <input type="text" className='Input' onChange={InputFiledHandler} />
+                <input type="text" className='Input' value={Input} onChange={InputFiledHandler} />
             </div>
 
             <div className='new-expense__control'>
                 <label>Amount</label>
-                <input type="number" className='Input' onChange={AmountFileHandler}/>
+                <input type="number" className='Input' value={Amount} onChange={AmountFileHandler}/>
             </div>
 
             <div className='new-expense__control'>
                 <label>Date</label>
-                <input type="date" className='Input' min='01-10-2019' max='01-02-2023' onChange={DateFileHandler} />
+                <input type="date" className='Input' value={Date} min='01-10-2019' max='01-02-2023' onChange={DateFileHandler} />
             </div>
             </div> 
             <div className='Form-submit__button'>
             <button type='submit'>Add Expense</button>
             </div>
         </form>
+
+
     </div>
   )
 }
